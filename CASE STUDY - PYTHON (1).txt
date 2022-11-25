@@ -1,0 +1,44 @@
+import PyPDF2
+#file = open("C:\\New folder\\Head First Python.pdf",'rb')
+#pdf_reader = PyPDF2.PdfFileReader(file)
+ 
+from PyPDF2 import PdfFileReader
+
+####### Q1 ######
+for i in range(0,625):
+    with open("C:\\New folder\\Head First Python.pdf",'rb') as file:
+        pdf = PdfFileReader(file)
+        page = pdf.getPage(i)
+        text =page.extractText()
+    print(text)
+file.close()
+
+## Format the Data such that ever word is isolated.
+file1=open(r"C:\\New folder\\Head First Python.pdf","a")
+file1.writelines(text)
+###
+a_string = text
+alphanumeric = ""
+ 
+for character in a_string:
+    if character.isalnum():
+        alphanumeric += character
+ 
+print(alphanumeric)
+
+##
+
+##Q3 Format the Data such that ever word is isolated.
+
+def split(alphanumeric): 
+	return [letter for letter in string] 
+	
+# Driver code 
+string = alphanumeric
+print(split(alphanumeric)) 
+
+#  Store the Data in JSON Format.
+
+d= alphanumeric
+x = json.loads(d)
+print(x)
